@@ -13,8 +13,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "paths": {
-      "nx-notion-page-to-md-export": ["src/index.ts"]
+      "nx-notion": ["src/index.ts"]
     }
   },
   "files": [],

@@ -1,17 +1,25 @@
 {
-  "name": "nx-notion-page-to-md-export",
-  "version": "0.0.1",
+  "name": "nx-notion",
+  "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kochax/nx-notion"
+  },
   "dependencies": {
     "@nx/devkit": "19.6.2",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@notionhq/client": "^2.2.15",
+    "notion-to-md": "^3.1.1"
   },
   "devDependencies": {
+    "@jscutlery/semver": "^5.3.1",
     "@nx/eslint": "19.6.2",
     "@nx/eslint-plugin": "19.6.2",
     "@nx/jest": "19.6.2",
     "@nx/js": "19.6.2",
+    "@nx/plugin": "19.6.2",
     "@nx/workspace": "19.6.2",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",
@@ -30,10 +38,9 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.5.2",
-    "verdaccio": "^5.0.4",
-    "@nx/plugin": "19.6.2"
+    "verdaccio": "^5.0.4"
   },
   "type": "commonjs",
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts"
+  "typings": "./src/index.d.ts",
+  "executors": "executors.json"
 }

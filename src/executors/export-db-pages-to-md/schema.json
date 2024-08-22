@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "export-from-database executor",
+  "description": "Exports all pages from a single Notion database",
+  "type": "object",
+  "properties": {
+    "notionApiToken": {
+      "type": "string",
+      "description": "Notion API token. See more: https://developers.notion.com/reference/create-a-token"
+    },
+    "databaseId": {
+      "type": "string",
+      "description": "Notion database ID"
+    },
+    "outputDir": {
+      "type": "string",
+      "description": "Path where to save markdown files"
+    }
+  },
+  "required": ["notionApiToken", "databaseId", "outputDir"]
+}

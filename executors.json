@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "export-db-pages-to-md": {
+      "implementation": "./src/executors/export-db-pages-to-md/export-db-pages-to-md.impl",
+      "schema": "./src/executors/export-db-pages-to-md/schema.json",
+      "description": "export-from-database executor"
+    }
+  }
+}
