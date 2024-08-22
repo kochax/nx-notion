@@ -1,0 +1,18 @@
+{
+  "name": "example-runner",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "examples/example-runner/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "export-db-pages": {
+      "executor": "@kochax/nx-notion:export-db-pages",
+      "options": {
+        "databaseQueryOptions": {
+          "database_id": "0075cfc0294c48399b3509440b810ca4"
+        },
+        "outputDir": "tmp/notion-export"
+      }
+    }
+  }
+}

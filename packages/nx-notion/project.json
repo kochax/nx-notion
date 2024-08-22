@@ -1,0 +1,35 @@
+{
+  "name": "nx-notion",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-notion/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-notion",
+        "tsConfig": "packages/nx-notion/tsconfig.lib.json",
+        "packageJson": "packages/nx-notion/package.json",
+        "main": "packages/nx-notion/src/index.ts",
+        "assets": ["packages/nx-notion/*.md", "packages/nx-notion/*.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/nx-notion/jest.config.ts"
+      }
+    }
+  }
+}
