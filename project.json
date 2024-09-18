@@ -88,9 +88,8 @@
       "options": {}
     },
     "local-run": {
-      "executor": "nx-notion:export-from-database",
+      "executor": "nx-notion:export-db-pages-to-md",
       "options": {
-        "notionApiToken": "secret_kH14dr1qWZh0T7Ses8FJyqeyIAzBKrki12DVnnGFCPt",
         "databaseId": "0075cfc0294c48399b3509440b810ca4",
         "outputDir": "tmp/md"
       }

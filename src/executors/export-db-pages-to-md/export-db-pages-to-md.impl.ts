@@ -1,20 +1,24 @@
 import { ExecutorContext, PromiseExecutor } from "@nx/devkit";
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
-import { NxNotionPageToMdExportExecutorSchema } from "./schema";
+import { ExportDbPagesToMdOptionsSchema } from "./schema";
 import path = require("path");
 import { mkdir, writeFile } from "fs/promises";
 
-const runExecutor: PromiseExecutor<
-  NxNotionPageToMdExportExecutorSchema
-> = async (
-  options: NxNotionPageToMdExportExecutorSchema,
+const runExecutor: PromiseExecutor<ExportDbPagesToMdOptionsSchema> = async (
+  options: ExportDbPagesToMdOptionsSchema,
   context: ExecutorContext
 ) => {
   console.log("Executor ran for export-from-database");
 
+  const apiKey = process.env["NOTION_API_KEY"];
+
+  if (!apiKey || apiKey === undefined || apiKey === null) {
+    throw new Error("NOTION_API_KEY is required");
+  }
+
   const notionClient = new Client({
-    auth: options.notionApiToken,
+    auth: apiKey,
   });
 
   const { results } = await notionClient.databases.query({
@@ -53,6 +57,13 @@ const runExecutor: PromiseExecutor<
       ),
     ]);
   }
+
+  // Build summary
+
+  await writeFile(
+    path.join(path.join(context.cwd, options.outputDir), "summary.json"),
+    Buffer.from(JSON.stringify(results))
+  );
 
   return {
     success: true,

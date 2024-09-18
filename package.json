@@ -2,6 +2,11 @@
   "name": "nx-notion",
   "version": "0.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Jovan Kočić",
+    "email": "kochax94@gmail.com",
+    "url": "https://www.jovankocic.com/"
+  },
   "scripts": {},
   "repository": {
     "type": "git",

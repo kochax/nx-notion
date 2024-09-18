@@ -1,5 +1,4 @@
-export interface NxNotionPageToMdExportExecutorSchema {
-  notionApiToken: string;
+export interface ExportDbPagesToMdOptionsSchema {
   databaseId: string;
   outputDir: string;
 } // eslint-disable-line

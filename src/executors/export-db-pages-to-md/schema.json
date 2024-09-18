@@ -5,10 +5,6 @@
   "description": "Exports all pages from a single Notion database",
   "type": "object",
   "properties": {
-    "notionApiToken": {
-      "type": "string",
-      "description": "Notion API token. See more: https://developers.notion.com/reference/create-a-token"
-    },
     "databaseId": {
       "type": "string",
       "description": "Notion database ID"
@@ -18,5 +14,5 @@
       "description": "Path where to save markdown files"
     }
   },
-  "required": ["notionApiToken", "databaseId", "outputDir"]
+  "required": ["databaseId", "outputDir"]
 }
