@@ -1,5 +1,7 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "strict": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -7,26 +9,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "isolatedModules": true,
     "target": "es2015",
-    "module": "commonjs",
-    "lib": ["es2020", "dom"],
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "paths": {
-      "nx-notion": ["src/index.ts"]
-    }
   },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

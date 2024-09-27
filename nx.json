@@ -47,5 +47,9 @@
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
     }
+  },
+
+  "workspaceLayout": {
+    "libsDir": "packages"
   }
 }

@@ -1,9 +1,9 @@
 import { ExecutorContext } from "@nx/devkit";
 
-import { ExportDbPagesToMdOptionsSchema } from "./schema";
-import executor from "./export-db-pages-to-md.impl";
+import { ExportDbPagesOptionsSchema } from "./schema";
+import executor from "./export-db-pages.impl";
 
-const options: ExportDbPagesToMdOptionsSchema = {
+const options: ExportDbPagesOptionsSchema = {
   databaseId: "123",
   notionApiToken: "123",
   outputDir: "/null",

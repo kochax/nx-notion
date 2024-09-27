@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Export database pages",
+  "description": "Exports all pages from a single Notion database",
+  "type": "object",
+  "properties": {
+    "databaseQueryOptions": {
+      "type": "object",
+      "properties": {
+        "database_id": { "type": "string" },
+        "filter": { "type": "object" },
+        "sorts": { "type": "array" },
+        "start_cursor": { "type": "string" },
+        "page_size": { "type": "number" }
+      },
+      "required": ["database_id"]
+    },
+    "outputDir": { "type": "string" }
+  },
+  "required": ["databaseQueryOptions", "outputDir"]
+}

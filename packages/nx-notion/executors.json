@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "export-db-pages": {
+      "implementation": "./src/executors/export-db-pages/export-db-pages.impl",
+      "schema": "./src/executors/export-db-pages/schema.json",
+      "description": "export-db-pages executor"
+    }
+  }
+}

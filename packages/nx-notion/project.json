@@ -1,7 +1,7 @@
 {
   "name": "nx-notion",
-  "$schema": "node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-notion",
   "projectType": "library",
   "release": {
     "version": {
@@ -14,28 +14,29 @@
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist",
-        "main": "./src/index.ts",
-        "tsConfig": "./tsconfig.lib.json",
+        "outputPath": "dist/packages/nx-notion",
+        "main": "packages/nx-notion/index.ts",
+        "tsConfig": "packages/nx-notion/tsconfig.lib.json",
         "assets": [
-          "*.md",
+          "README.md",
+          "LICENSE",
           {
-            "input": "./src",
+            "input": "./packages/nx-notion/src",
             "glob": "**/!(*.ts)",
             "output": "./src"
           },
           {
-            "input": "./src",
+            "input": "./packages/nx-notion/src",
             "glob": "**/*.d.ts",
             "output": "./src"
           },
           {
-            "input": ".",
+            "input": "./packages/nx-notion",
             "glob": "generators.json",
             "output": "."
           },
           {
-            "input": ".",
+            "input": "./packages/nx-notion",
             "glob": "executors.json",
             "output": "."
           }
