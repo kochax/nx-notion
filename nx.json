@@ -53,14 +53,14 @@
     "changelog": {
       "projectChangelogs": {
         "renderOptions": {
-          "authors": true,
+          "authors": false,
           "commitReferences": true,
           "versionTitleDate": true
         }
       },
       "workspaceChangelog": {
         "renderOptions": {
-          "authors": true,
+          "authors": false,
           "commitReferences": true,
           "versionTitleDate": true
         }
