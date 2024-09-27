@@ -16,7 +16,12 @@
       },
       "required": ["database_id"]
     },
-    "outputDir": { "type": "string" }
+    "outputDir": { "type": "string" },
+    "exportType": {
+      "type": "string",
+      "enum": ["md", "json"],
+      "default": "md"
+    }
   },
   "required": ["databaseQueryOptions", "outputDir"]
 }

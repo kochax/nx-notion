@@ -1,10 +1,8 @@
-import { ExecutorContext, output, PromiseExecutor } from "@nx/devkit";
-import { NotionToMarkdown } from "notion-to-md";
-import { ExportDbPagesOptionsSchema } from "./schema";
-import path = require("path");
-import { mkdir, writeFile } from "fs/promises";
-import { notionClient } from "../../utils/client";
-import { MarkdownExporter } from "../../utils/exporters/markdown-exporter";
+/* eslint-disable no-case-declarations */
+import { ExecutorContext, output, PromiseExecutor } from '@nx/devkit';
+import { ExportDbPagesOptionsSchema } from './schema';
+import { notionClientFactory } from '../../utils/client';
+import { MarkdownExporter } from '../../utils/exporters/markdown-exporter';
 
 const runExecutor: PromiseExecutor<ExportDbPagesOptionsSchema> = async (
   options: ExportDbPagesOptionsSchema,
@@ -14,6 +12,8 @@ const runExecutor: PromiseExecutor<ExportDbPagesOptionsSchema> = async (
     title: `Runing ${context.targetName}: Starting... `,
     color: output.colors.green(),
   });
+
+  const notionClient = notionClientFactory({ auth: options.notionApiKey });
 
   const { results } = await notionClient.databases.query(
     options.databaseQueryOptions
@@ -26,25 +26,29 @@ const runExecutor: PromiseExecutor<ExportDbPagesOptionsSchema> = async (
       )}`,
     });
 
-    throw new Error("No results found");
+    throw new Error('No results found');
+  }
+
+  if (!options.exportType) {
+    output.warn({
+      title: `No export type specified, defaulting to 'md'`,
+    });
+    options.exportType = 'md';
   }
 
   switch (options.exportType) {
-    case "md":
+    case 'md':
       const exporter = new MarkdownExporter(
+        context,
         notionClient,
         results,
         options.outputDir
       );
       await exporter.export();
       break;
+    default:
+      throw new Error(`Not supported exporter ${options.exportType}`);
   }
-
-  // Build summary
-  // await writeFile(
-  //   path.join(path.join(context.cwd, options.outputDir), "summary.json"),
-  //   Buffer.from(JSON.stringify(results))
-  // );
 
   return {
     success: true,

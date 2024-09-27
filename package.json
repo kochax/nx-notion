@@ -1,20 +1,22 @@
 {
-  "name": "nx-notion-repo",
+  "name": "@kochax/nx-notion-repo",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
   "dependencies": {
-    "@nx/devkit": "19.6.2",
-    "tslib": "^2.3.0",
     "@notionhq/client": "^2.2.15",
-    "notion-to-md": "^3.1.1"
+    "@nx/devkit": "19.6.2",
+    "notion-to-md": "^3.1.1",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@jscutlery/semver": "^5.3.1",
-    "@nx/eslint": "19.6.2",
-    "@nx/eslint-plugin": "19.6.2",
-    "@nx/jest": "19.6.2",
-    "@nx/js": "19.6.2",
+    "@nx/esbuild": "19.8.2",
+    "@nx/eslint": "19.8.2",
+    "@nx/eslint-plugin": "19.8.2",
+    "@nx/jest": "19.8.2",
+    "@nx/js": "19.8.2",
+    "@nx/node": "^19.8.2",
     "@nx/plugin": "19.6.2",
     "@nx/workspace": "19.6.2",
     "@swc-node/register": "~1.9.1",
@@ -25,15 +27,20 @@
     "@types/node": "18.16.9",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
+    "esbuild": "^0.19.2",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
     "nx": "19.6.2",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.5.2",
     "verdaccio": "^5.0.4"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }

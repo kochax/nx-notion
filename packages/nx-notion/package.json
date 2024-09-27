@@ -1,22 +1,14 @@
 {
-  "name": "nx-notion",
-  "version": "0.0.0",
-  "main": "./index.js",
-  "typings": "./index.d.ts",
+  "name": "@kochax/nx-notion",
+  "version": "0.0.1",
+  "description": "Nx plugin for Notion",
   "license": "MIT",
+  "homepage": "https://github.com/kochax/nx-notion",
   "author": {
     "name": "Jovan Kočić",
     "email": "kochax94@gmail.com",
     "url": "https://www.jovankocic.com/"
   },
-  "description": "Nx plugin for Notion",
-  "homepage": "https://github.com/kochax/nx-notion",
-  "keywords": [
-    "notion",
-    "notion-api",
-    "nx",
-    "nx-plugin"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kochax/nx-notion"
@@ -24,15 +16,20 @@
   "bugs": {
     "url": "https://github.com/kochax/nx-notion/issues"
   },
-  "generators": "./generators.json",
+  "keywords": [
+    "notion",
+    "notion-api",
+    "nx",
+    "nx-plugin"
+  ],
   "executors": "./executors.json",
+  "nx-migrations": {
+    "migrations": "./migrations.json"
+  },
   "peerDependencies": {
     "@nx/devkit": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "@nx/js": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "@nx/vite": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "@nx/eslint": "^17.0.0 || ^18.0.0 || ^19.0.0"
-  },
-  "nx-migrations": {
-    "migrations": "./migrations.json"
   }
 }

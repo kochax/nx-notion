@@ -1,0 +1,3 @@
+export const CONSTANTS = {
+    NX_NOTION_API_KEY: 'NX_NOTION_API_KEY',
+}

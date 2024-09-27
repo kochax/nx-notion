@@ -16,6 +16,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "paths": {
+      "@kochax/nx-notion": ["packages/nx-notion/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,11 +1,18 @@
-import { Client } from "@notionhq/client";
+import { Client } from '@notionhq/client';
+import { CONSTANTS } from './constants';
+import { ClientOptions } from '@notionhq/client/build/src/Client';
 
-const apiKey = process.env["NOTION_API_KEY"];
+export const notionClientFactory = (options?: ClientOptions) => {
+  const apiKey = process.env[CONSTANTS.NX_NOTION_API_KEY] || options?.auth;
 
-if (!apiKey || apiKey === undefined || apiKey === null) {
-  throw new Error("NOTION_API_KEY is required");
-}
+  if (!apiKey || apiKey === undefined || apiKey === null) {
+    throw new Error(
+      `Notion API key was not provided. You can set it via env variable ${CONSTANTS.NX_NOTION_API_KEY} or 'notionApiKey' option`
+    );
+  }
 
-export const notionClient = new Client({
-  auth: apiKey,
-});
+  return new Client({
+    ...options,
+    auth: apiKey,
+  });
+};

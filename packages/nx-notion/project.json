@@ -1,11 +1,14 @@
 {
-  "name": "nx-notion",
+  "name": "@kochax/nx-notion",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/nx-notion",
+  "sourceRoot": "packages/nx-notion/src",
   "projectType": "library",
   "release": {
     "version": {
-      "conventionalCommits": true
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
     }
   },
   "tags": [],
@@ -15,32 +18,10 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/nx-notion",
-        "main": "packages/nx-notion/index.ts",
         "tsConfig": "packages/nx-notion/tsconfig.lib.json",
-        "assets": [
-          "README.md",
-          "LICENSE",
-          {
-            "input": "./packages/nx-notion/src",
-            "glob": "**/!(*.ts)",
-            "output": "./src"
-          },
-          {
-            "input": "./packages/nx-notion/src",
-            "glob": "**/*.d.ts",
-            "output": "./src"
-          },
-          {
-            "input": "./packages/nx-notion",
-            "glob": "generators.json",
-            "output": "."
-          },
-          {
-            "input": "./packages/nx-notion",
-            "glob": "executors.json",
-            "output": "."
-          }
-        ]
+        "packageJson": "packages/nx-notion/package.json",
+        "main": "packages/nx-notion/src/index.ts",
+        "assets": ["packages/nx-notion/*.md", "packages/nx-notion/*.json"]
       }
     },
     "nx-release-publish": {
@@ -48,51 +29,11 @@
         "packageRoot": "dist/{projectRoot}"
       }
     },
-    "local-publish": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "nx build",
-          "cd dist && npm version prepatch",
-          "nx nx-release-publish"
-        ],
-        "parallel": false
-      }
-    },
-    "local-registry": {
-      "executor": "@nx/js:verdaccio",
-      "options": {
-        "port": 4873,
-        "config": ".verdaccio/config.yml",
-        "storage": "tmp/local-registry/storage"
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "./src",
-          "{projectRoot}/package.json",
-          "./package.json"
-        ]
-      }
-    },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectName}"],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "jest.config.ts"
-      }
-    },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {}
-    },
-    "local-run": {
-      "executor": "nx-notion:export-db-pages-to-md",
-      "options": {
-        "databaseId": "0075cfc0294c48399b3509440b810ca4",
-        "outputDir": "tmp/md"
+        "jestConfig": "packages/nx-notion/jest.config.ts"
       }
     }
   }
