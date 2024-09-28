@@ -1,6 +1,6 @@
 {
   "name": "@kochax/nx-notion",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "Nx plugin for Notion",
   "license": "MIT",
   "homepage": "https://github.com/kochax/nx-notion",
