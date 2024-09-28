@@ -10,11 +10,8 @@
 
 This repository is home to a library designed for managing various operations with Notion inside the NX workspace. The library includes a set of functions such as executors, builders, and more.
 
-https://github.com/kochax/nx-notion
-
 [![License](https://img.shields.io/github/license/kochax/nx-notion.svg?color=40bb12)](https://github.com/kochax/nx-notion/blob/master/LICENSE)
-[![NPM Version](https://img.shields.io/npm/v/nx-electron.svg)](https://www.npmjs.com/package/nx-electron)
-[![Downloads](https://img.shields.io/badge/downloads-500k+-respect)](https://npm-stat.com/charts.html?package=nx-electron&from=2019-11-01)
+[![NPM Downloads](https://img.shields.io/npm/dm/%40kochax%2Fnx-notion)](https://www.npmjs.com/package/@kochax/nx-notion)
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/kochax)
 [![Star this repo](https://img.shields.io/github/stars/kochax/nx-notion?style=social)](https://github.com/kochax/nx-notion)
 
