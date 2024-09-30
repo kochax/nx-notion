@@ -26,10 +26,7 @@ module.exports = {
     { value: 'revert', name: 'revert:   Reverts a previous commit' },
   ],
   scopes: [
-    { name: 'router' },
-    { name: 'components' },
-    { name: 'hooks' },
-    { name: 'styles' },
+    { name: 'nx-notion' },
     { name: 'docs' },
     { name: 'utils' },
     { name: 'config' },

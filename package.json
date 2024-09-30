@@ -2,7 +2,9 @@
   "name": "@kochax/nx-notion-repo",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "commit": "cz"
+  },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "@nx/devkit": "19.6.2",
